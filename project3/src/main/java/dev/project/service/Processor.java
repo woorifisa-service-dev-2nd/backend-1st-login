@@ -93,7 +93,7 @@ public List<String> makeUser(Scanner sc, List<UserInformation> userList) {
 	
 	// 4. 비밀번호 찾기 기능
 	public String findPW(Scanner sc, List<UserInformation> userList) {
-		String foundPW = "";
+		String foundPW = "정보가 일치하지 않습니다.";
 		
 		System.out.print("ID: ");
 		String inputID = sc.next();
@@ -104,7 +104,6 @@ public List<String> makeUser(Scanner sc, List<UserInformation> userList) {
 		for (UserInformation user : userList) {
 			if (inputID.equals(user.getUserID()) && inputPhone.equals(user.getUserPhone()))
 				foundPW = user.getUserPW();
-			else { foundPW = "정보가 일치하지 않습니다."; }
 			
 		} return foundPW;
 	}
